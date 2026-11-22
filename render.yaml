@@ -1,0 +1,14 @@
+# Render blueprint (Task 5). Put the contents of server/ in its own GitHub repo, then
+# Render -> New -> Blueprint (or Web Service) -> pick the repo. Render sets PORT itself.
+services:
+  - type: web
+    name: cgpa-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PYTHON_VERSION
+        value: "3.12.7"
