@@ -48,6 +48,6 @@ mcp.tool(get_credit_hours)
 if __name__ == "__main__":
     mcp.run(
         transport="http",  # streamable HTTP, served at /mcp
-        host=os.getenv("HOST", "127.0.0.1"),
+        host=os.getenv("HOST", "127.0.0.0"),
         port=int(os.getenv("PORT", "8000")),
     )
